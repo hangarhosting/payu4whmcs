@@ -1,15 +1,13 @@
-# payu4whmcs
+## payu4whmcs
 
 PayU / Gecad ePayment module for WHMCS
 version 0.95, 2015.12.24
 Copyright (C) 2010-2017  Stefaniu Criste - https://hangar.hosting
 
-===========================
+### WARNING: THIS PACKAGE IS NO LONGER MAINTAINED
 
-WARNING: THIS PACKAGE IS NO LONGER MAINTAINED
 PayU's policy of selecting their customers does not include our company,
 therefore we cannot continue to maintain this module. 
-===========================
 
 
 This program is free software: you can redistribute it and/or modify
@@ -27,8 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-INSTALLATION
-========================================================================
+## INSTALLATION
 
 ************************************************************************
 1) BACKUP your WHMCS file structure and database!  You have been warned!
@@ -59,33 +56,30 @@ Fill the information as needed:
 [Convert To For Processing]  must be set to RON
 
 
-6) delete /whmcs-epayment_XXXXX from the temp folder
-
-7) access your PayU control panel and at "Account Management" choose "Account Settings"
+6) access your PayU control panel and at "Account Management" choose "Account Settings"
 Verify that "Notifications" section has "Email Text & IPN" radio button checked and at
 "Send notifications for" check only "Authorized orders". Save settings
 
 
-8) Also, click on second tab "IPN Settings".
+7) Also, click on second tab "IPN Settings".
 Enter the address for the callback function
 https://[whmcs_address]/modules/gateways/callback/epayment.php
 Do not forget to replace [whmcs_address] with the actual internet address of your WHMCS instance
 Save settings
 
 
-9) Logoff from your PayU Control Panel
+8) Logoff from your PayU Control Panel
 
 
-10) Check into your whmcs database the folowing query
+9) Check into your whmcs database the folowing query
 
-###############################################
-select * from tblpaymentgateways where gateway="epayment" and setting="type";
+`select * from tblpaymentgateways where gateway="epayment" and setting="type";
 +----------+---------+----------+-------+
 | gateway  | setting | value    | order |
 +----------+---------+----------+-------+
 | epayment | type    | Invoices |     1 |
 +----------+---------+----------+-------+
-###############################################
+`
 
 if "value" is "CC", please change it to "Invoices" (sometimes WHMCS does NOT set it right at the first installation)
 
@@ -95,7 +89,7 @@ if "value" is "CC", please change it to "Invoices" (sometimes WHMCS does NOT set
 
 
 
-UPGRADING
+### UPGRADING
 ================================================================================================
 
 Upgrading from previous versions is pretty straightforward
