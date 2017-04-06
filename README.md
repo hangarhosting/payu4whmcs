@@ -2,7 +2,7 @@
 
 PayU / Gecad ePayment module for WHMCS
 version 0.95, 2015.12.24
-Copyright (C) 2010-2015  Stefaniu Criste - www.hangarhosting.net
+Copyright (C) 2010-2017  Stefaniu Criste - https://hangar.hosting
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -36,25 +36,29 @@ The files should be added along with the other ones in the corresponding folders
 
 4) activate the module in the WHMCS interface > Setup > Payment Gateways
 Fill the information as needed:
-- [Show on order form]:        tick checkbox if you want the payment method to appear on order forms;
-- [Display name]:              choose a suitable name for the gateway (e.q. Credit Card)
-- [Secret Key]:                the one received from PayU
-- [Merchant Name]:             your merchant ID, as received from PayU;
-- [Test Mode]:                 tick checkbox when testing the gateway
-- [Convert To For Processing]  must be set to RON
+
+[Show on order form]:        tick checkbox if you want the payment method to appear on order forms;
+[Display name]:              choose a suitable name for the gateway (e.q. Credit Card)
+[Secret Key]:                the one received from PayU
+[Merchant Name]:             your merchant ID, as received from PayU;
+[Test Mode]:                 tick checkbox when testing the gateway
+[Convert To For Processing]  must be set to RON
+
+
 
 5) delete /whmcs-epayment_XXXXX from the temp folder
 
 6) access your PayU control panel and at "Account Management" choose "Account Settings"
 Verify that "Notifications" section has "Email Text & IPN" radio button checked and at
-"Send notifications for" check only "Authorized orders"
-Save settings
+"Send notifications for" check only "Authorized orders". Save settings
+
 
 7) Also, click on second tab "IPN Settings".
 Enter the address for the callback function
 https://[whmcs_address]/modules/gateways/callback/epayment.php
 Do not forget to replace [whmcs_address] with the actual internet address of your WHMCS instance
 Save settings
+
 
 8) Logoff from your PayU Control Panel
 
