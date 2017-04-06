@@ -5,6 +5,7 @@ version 0.95, 2015.12.24
 Copyright (C) 2010-2017  Stefaniu Criste - https://hangar.hosting
 
 ===========================
+
 WARNING: THIS PACKAGE IS NO LONGER MAINTAINED
 PayU's policy of selecting their customers does not include our company,
 therefore we cannot continue to maintain this module. 
