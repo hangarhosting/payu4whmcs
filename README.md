@@ -73,13 +73,14 @@ Save settings
 
 9) Check into your whmcs database the folowing query
 
-`select * from tblpaymentgateways where gateway="epayment" and setting="type";
-+----------+---------+----------+-------+
+`select * from tblpaymentgateways where gateway="epayment" and setting="type";`
+
+```+----------+---------+----------+-------+
 | gateway  | setting | value    | order |
 +----------+---------+----------+-------+
 | epayment | type    | Invoices |     1 |
 +----------+---------+----------+-------+
-`
+```
 
 if "value" is "CC", please change it to "Invoices" (sometimes WHMCS does NOT set it right at the first installation)
 
