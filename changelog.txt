@@ -1,0 +1,54 @@
+version 0.93, 2016.01.03
+-------------------------------------------------------------
+* modified VAT tax from 24% to 20%
+=============================================================
+version 0.92, 2014.05.19
+-------------------------------------------------------------
+* fixed non-pritable character in module causing a blank
+screen in certain situations
+=============================================================
+
+version 0.91, 2014.02.24
+-------------------------------------------------------------
+* fixed callback error causing IPN to fail
+=============================================================
+
+version 0.9, 2014.02.23
+-------------------------------------------------------------
+* fixed "Invalid Signature" error which appears in instances
+of WHMCS 5.3+,  where PayU (former ePayment) merchant secret
+contains special chars like "&"
+=============================================================
+
+
+version 0.8, 2013.06.10
+-------------------------------------------------------------
+* added IDN support, so you don't have to confirm every sale
+in PayU control Panel; all is done automatically
+=============================================================
+
+version 0.7, 2012.10.10
+-------------------------------------------------------------
+* changed the call URL to https://secure.payu.ro/order/lu.php
+as the payment company has been acquired by PayU group
+=============================================================
+
+version 0.6, 2011.08.09
+-------------------------------------------------------------
+* added callback support (IPN, as defined in ePayment)
+* restructured the folders
+* added README for install/upgrade
+=============================================================
+
+version 0.5, 2010.06.29
+-------------------------------------------------------------
+* defined variable $vat_tax in order to avoid VAT hardcoding
+and have an easy point of VAT modification
+* added GNU GPLv3 license
+* deleted epayment-readme.txt file
+=============================================================
+
+version 0.4, 2010.02.15
+-------------------------------------------------------------
+* ...
+=============================================================

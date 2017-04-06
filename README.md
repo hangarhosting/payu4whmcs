@@ -4,6 +4,13 @@ PayU / Gecad ePayment module for WHMCS
 version 0.95, 2015.12.24
 Copyright (C) 2010-2017  Stefaniu Criste - https://hangar.hosting
 
+===========================
+WARNING: THIS PACKAGE IS NO LONGER MAINTAINED
+PayU's policy of selecting their customers does not include our company,
+therefore we cannot continue to maintain this module. 
+===========================
+
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -26,15 +33,21 @@ INSTALLATION
 1) BACKUP your WHMCS file structure and database!  You have been warned!
 ************************************************************************
 
-2) unzip whmcs-epayment_XXXXX.zip in a temporary folder;
+2) Verify your backup.
 
-3) copy "modules" folder into your <whmcs root> folder
+3) Copy "modules" folder into your <whmcs root> folder
 The files should be added along with the other ones in the corresponding folders
 - in the folder <whmcs_root>/modules/gateways you should see a folder called epayment, with only one file inside: LiveUpdate.class.php
 - in the folder <whmcs_root>/modules/gateways you should see a file called epayment.php
 - in the folder <whmcs_root>/modules/gateways/callback you should see a file called epayment.php
 
-4) activate the module in the WHMCS interface > Setup > Payment Gateways
+4) Open the file <whmcs_root>/modules/gateways/epayment.php for editing
+Verify lines 52-72 and modify the values to suit your needs
+- VAT value
+- customer specific fields
+
+
+5) activate the module in the WHMCS interface > Setup > Payment Gateways
 Fill the information as needed:
 
 [Show on order form]:        tick checkbox if you want the payment method to appear on order forms;
@@ -45,24 +58,24 @@ Fill the information as needed:
 [Convert To For Processing]  must be set to RON
 
 
+6) delete /whmcs-epayment_XXXXX from the temp folder
 
-5) delete /whmcs-epayment_XXXXX from the temp folder
-
-6) access your PayU control panel and at "Account Management" choose "Account Settings"
+7) access your PayU control panel and at "Account Management" choose "Account Settings"
 Verify that "Notifications" section has "Email Text & IPN" radio button checked and at
 "Send notifications for" check only "Authorized orders". Save settings
 
 
-7) Also, click on second tab "IPN Settings".
+8) Also, click on second tab "IPN Settings".
 Enter the address for the callback function
 https://[whmcs_address]/modules/gateways/callback/epayment.php
 Do not forget to replace [whmcs_address] with the actual internet address of your WHMCS instance
 Save settings
 
 
-8) Logoff from your PayU Control Panel
+9) Logoff from your PayU Control Panel
 
-9) check into whmcs database the folowing query
+
+10) Check into your whmcs database the folowing query
 
 ###############################################
 select * from tblpaymentgateways where gateway="epayment" and setting="type";
@@ -90,9 +103,8 @@ Upgrading from previous versions is pretty straightforward
 1) BACKUP your WHMCS files and database!  You have been warned!
 ************************************************************************
 
-2) unzip whmcs-epayment_XXXXX.zip in a temporary folder;
-3) copy the folder /modules into your <whmcs root>, overwriting the existing files
-4) delete /whmcs-epayment_XXXXX from the temp folder
+2) Verify your backup
+3) Copy the folder /modules into your <whmcs root>, overwriting the existing files
 
 This should be all. Now you should do the first tests
 Tick on "Test Mode" in WHMCS > Payment Gateways, to make sure nothing bad happens.
