@@ -71,16 +71,13 @@ Save settings
 8) Logoff from your PayU Control Panel
 
 
-9) Check into your whmcs database the folowing query
+9) Check into your whmcs database and issue the folowing query
 
 `select * from tblpaymentgateways where gateway="epayment" and setting="type";`
 
-```+----------+---------+----------+-------+
-| gateway  | setting | value    | order |
-+----------+---------+----------+-------+
-| epayment | type    | Invoices |     1 |
-+----------+---------+----------+-------+
-```
+gateway|setting|value|order|
+---------|---------|----------|-------|
+epayment | type    | Invoices |     1 |
 
 if "value" is "CC", please change it to "Invoices" (sometimes WHMCS does NOT set it right at the first installation)
 
@@ -91,7 +88,6 @@ if "value" is "CC", please change it to "Invoices" (sometimes WHMCS does NOT set
 
 
 ### UPGRADING
-================================================================================================
 
 Upgrading from previous versions is pretty straightforward
 
